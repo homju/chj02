@@ -17,9 +17,13 @@
         #wrap > div:nth-child(1){/*background-color: burlywood;*/ background:url('./images/business-2846221_1920.jpg') no-repeat 0 0;}
         #wrap > div:nth-child(2){background:url(../profile.png) no-repeat 0 0;
                                  background-color: yellow;}
-        #wrap > div:nth-child(3){background-color: rgb(135, 222, 208);}
+        #wrap > div:nth-child(3){/*background-color: rgb(135, 222, 208);*/
+            background-image: url('./images/sunset-8516639_1920.jpg');
+            background-repeat: no-repeat;
+        }
         #wrap > div:nth-child(4){background-color: rgb(135, 183, 222);}
         #wrap > div:nth-child(5){background-color: rgb(222, 135, 208);}
+        /* #wrap > div:nth-child(6){background-color: rgb(120, 223, 183);} */
         #wrap > div > div{margin: 0 auto; width: 1500px;  height: 100vh;
                           /* background-color:rgba(255, 244, 146, 0.5); */
         }
@@ -50,9 +54,51 @@
         #q_mn ul.nav li a{ color: #ccc;}
         #q_mn ul.nav li.on a{ color: rgb(15, 15, 15);}
 
-        #profile .in_profile{
+        #profile {
+            padding-top: 200px;
+            box-sizing: border-box;
+        }
+
+        #profile .in_profile {
+            width: 800px;
+            height: 600px;
             background-color: thistle;
-            display: flex;
+            display: flex; 
+            justify-content: space-around; 
+            gap: 30px;
+        }
+
+        #profile .in_profile .main_introduction {
+            margin-top: 100px;
+            width: 350px;
+            height: 400px;
+            background-image: url('./images/brick-wall-1834784_1920.jpg');
+            background-repeat: no-repeat;
+            background-position: 0 0;
+            background-size: 600px;
+            /* background-color: antiquewhite; */
+            border: 1px solid #000;
+        }
+
+        #profile .in_profile .Self-introduction {
+            margin-top: 50px;  
+            width: 450px;
+            height: 500px;
+            background-color: darkseagreen;
+            border: 1px solid #000;
+        }
+        #profile .in_profile .Self-introduction h2{
+            width: 100%;
+            font-size: 40px;
+            font-weight: bold;
+            margin: 30px 0 30px 30px;
+        }
+        #profile .in_profile .Self-introduction p{
+            width: 100%;
+            padding-left: 30px;
+            box-sizing: border-box;
+            box-shadow: 1px 1px 2px rgba(209, 209, 209, 0.1);
+            outline: 1px solid #000;
         }
 
         #skill{}
@@ -72,8 +118,25 @@
         #project_1 .output{ background:url(../screen.png) no-repeat 0 100px; 
                             background-size: 100%;}
         #project_1 .output > div{width: 420px; height: 270px; 
-                                 border: 1px solid #000; box-sizing: border-box;
-                                 margin: 120px 0 0 39px;}            
+                                 border-radius: 1px solid #000; 
+                                 box-sizing: border-box;
+                                 margin: 120px 0 0 39px;
+                                background: url('/images/monitor-1130493_1920.png');
+                                background-size: 100%;
+                                background-repeat: no-repeat;
+                                position: relative;
+    }            
+
+    #project_1 .output .img01{
+        position: absolute;
+        top:18px;
+        left:16px;
+        width:390px;
+        height:190px;
+        background-color: aqua;
+        opacity: 0.5;
+    }
+
     </style>
     <script src="js/jquery.js"></script>
     <script>
@@ -145,7 +208,20 @@
         <!-- 소개 -->
         <div id="profile">
             <div class="in_profile">
-                
+                <div class="main_introduction"></div>
+                <div class="Self-introduction">
+                    <h2>About ME</h2>
+                    <p>이름: 천호준</p>
+                    <p>나이 : 19</p>
+                    <p>학력 : 고등학교 재학중</p>
+                    <p>수료 내용</p>
+                    <P>코리아IT아카데미 '부산 프론트엔드 과정 수료' </P>
+                    <P>c언어 (1개월)특강 수료</P>
+                    <P>자격증</P>
+                    <p>미보유</p>
+                    <p>운전면허증</p>
+                    <p>미보유</p>
+                </div>
             </div>
         </div>
         <!-- 스킬 -->
@@ -177,6 +253,12 @@
                         </div>
                         <h5>node.js</h5>
                   </li>
+                  <li>
+                    <div>
+                        <div class="in_box in_box05">90%</div>
+                    </div>
+                    <h5>react</h5>
+                  </li>
 
                </ul>
 
@@ -193,6 +275,7 @@
                         $('#skill .in_box02').stop().delay(500).css({top:'300px'}).animate({top:'30px'},1000);
                         $('#skill .in_box03').stop().delay(1000).css({top:'300px'}).animate({top:'120px'},1000);
                         $('#skill .in_box04').stop().delay(1500).css({top:'300px'}).animate({top:'100px'},1000);
+                        $('#skill .in_box05').stop().delay(1500).css({top:'300px'}).animate({top:'100px'},1000);
                     }
                     else if(scrollTop < 1500 && scene01Num == 0){
                         scene01Num = 1;
@@ -200,6 +283,7 @@
                         $('#skill .in_box02').stop().css({top:'30px'}).animate({top:'300px'},1000); 
                         $('#skill .in_box03').stop().css({top:'120px'}).animate({top:'300px'},1000);
                         $('#skill .in_box04').stop().css({top:'100px'}).animate({top:'300px'},1000);
+                        $('#skill .in_box05').stop().css({top:'100px'}).animate({top:'300px'},1000);
 
                     }
                 });
@@ -212,7 +296,9 @@
             <div class="in_project_1">
                <ul class="list">
                    <li class="output">
-                       <div><img src="../마스크 그룹 1.png" width="100%" alt=""></div>
+                       <div>
+                            <div class="img01"></div>
+                       </div>
                    </li>
                    <li class="account">
                        <h3>프로젝트명</h3>
@@ -228,8 +314,14 @@
         </div>
         <!-- 마무리 -->
         <div id="end">
-            <div class="in_end"></div>
+            <div class="in_end">
+                <h2>감사합니다</h2>
+                <P>hojunc720@gmail.com</P>
+            </div>
         </div>
+        <!-- <div class="insertbox">
+            <div class="in_end"></div>
+        </div> -->
     </div>
      <!-- 퀵메뉴 -->
      <div id="q_mn">
@@ -239,6 +331,7 @@
             <li><a href="#">Skill</a></li>
             <li><a href="#">project1</a></li>
             <li><a href="#">finish</a></li>
+            <!-- <li><a href="#">insertbox</a></li> -->
         </ul>
     </div>
     <script>
